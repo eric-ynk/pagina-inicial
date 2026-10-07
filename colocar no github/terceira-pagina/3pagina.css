@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 1. Fixa a altura do ecrã e elimina completamente o scroll */
+html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Remove qualquer barra de rolagem */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+}
+
+/* --- CABEÇALHO --- */
+.header {
+    padding: 18px 50px 12px 50px;
+    background-color: #FFFFFF;
+    flex-shrink: 0; /* Impede o cabeçalho de encolher */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icone-interrogacao {
+    color: #FFC107;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.titulo-header {
+    color: #8C619A;
+    font-size: 50px;
+    font-weight: 800;
+}
+
+/* --- FAIXA CINZENTA --- */
+.faixa-subtitulo {
+    background-color: #F8F7F9;
+    width: 100%;
+    padding: 12px 20px;
+    text-align: center;
+    flex-shrink: 0; /* Impede a faixa de encolher */
+}
+
+.subtitulo-header {
+    color: #6C5275;
+    font-size: 55px;
+    font-weight: 600;
+}
+
+/* --- ÁREA DA IMAGEM (OCUPA O ESPAÇO RESTANTE) --- */
+.main-container {
+    flex: 1;          /* Ocupa exatamente o espaço vertical que sobra */
+    min-height: 0;    /* Evita que o flex ultrapasse o limite do ecrã */
+    width: 100%;
+    position: relative;
+}
+
+.ilustracao-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-ilustracao {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta a imagem para caber perfeitamente sem distorcer */
+    display: block;
+}
+
+/* --- BOTÃO PRÓXIMO --- */
+.btn-proximo {
+    position: absolute;
+    bottom: 25px;
+    right: 40px;
+    background-color: #FFC043;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 24px 112px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    z-index: 10;
+}
+
+.btn-proximo:hover {
+    background-color: #FFAE1A;
+    transform: translateY(-2px);
+}
+
+.btn-proximo .seta {
+    font-size: 32px;
+    line-height: 1;
+    margin-top: -2px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    .titulo-header { 
+        font-size: 16px;
+    }
+
+    .icone-interrogacao {
+    color: #FFC107;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+    .subtitulo-header {
+        font-size: 15px;
+    }    
+
+    .btn-proximo {
+    position: absolute;
+    bottom: 25px;
+    background-color: #FFC043;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    z-index: 10;
+}
+}
